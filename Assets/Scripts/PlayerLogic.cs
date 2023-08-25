@@ -64,6 +64,11 @@ public class PlayerLogic : MonoBehaviour
 
     void Jump()
     {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Physics2D.IgnoreLayerCollision(7, 8, true);
+            Invoke("IgnoreLayerOFF", 0.5f);
+        }
         if (Input.GetKey(KeyCode.W))
         {
             if (isGrounded) { jumpControl = true; }
@@ -97,6 +102,7 @@ public class PlayerLogic : MonoBehaviour
             if (!faceRight) { rb.AddForce(Vector2.left * lungeImpulce); }
             else
             {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.right * lungeImpulce);
 
             }
@@ -109,5 +115,10 @@ public class PlayerLogic : MonoBehaviour
     void LungeLock()
     {
         lockLunge = false;
+    }
+
+    void IgnoreLayerOFF()
+    {
+        Physics2D.IgnoreLayerCollision(7, 8, false);
     }
 }
