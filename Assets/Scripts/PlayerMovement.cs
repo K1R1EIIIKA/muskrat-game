@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
             _isDash = true;
         
         Dash();
-        
     }
 
     private void Move()
@@ -71,7 +70,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash()
     {
-        if (_percentageComplete > 1.0f) _isDash = false;
+        if (_percentageComplete > 1.0f) 
+            _isDash = false;
         
         if (!_isDash || _percentageComplete > 1.0f || (_horizontalInput == 0 && _verticalInput == 0)) return;
         

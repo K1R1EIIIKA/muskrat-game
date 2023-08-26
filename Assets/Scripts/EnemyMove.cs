@@ -1,14 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class EnemyMove : MonoBehaviour
 {
     public float speed;
-
     private float waitTime;
-
     public float startWaitTime;
 
     public Transform[] moveSpot;
@@ -16,13 +16,17 @@ public class EnemyMove : MonoBehaviour
     private int randomSpot;
     public float lenght;
 
-
     void Start()
     {
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpot.Length);
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+            Player.Health--;
+    }
 
     void Update()
     {
@@ -30,8 +34,6 @@ public class EnemyMove : MonoBehaviour
         if (moveSpot.Length != 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, moveSpot[randomSpot].position, speed * Time.deltaTime);
-
-
 
             if (Vector2.Distance(transform.position, moveSpot[randomSpot].position) < 0.2f)
             {

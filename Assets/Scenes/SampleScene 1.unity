@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 15641173}
   - component: {fileID: 15641172}
   - component: {fileID: 15641171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,9 +264,9 @@ GameObject:
   - component: {fileID: 20762638}
   - component: {fileID: 20762637}
   - component: {fileID: 20762636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,9 +439,9 @@ GameObject:
   - component: {fileID: 316083486}
   - component: {fileID: 316083485}
   - component: {fileID: 316083484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -569,9 +569,9 @@ GameObject:
   - component: {fileID: 324207942}
   - component: {fileID: 324207944}
   - component: {fileID: 324207943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,9 +699,9 @@ GameObject:
   - component: {fileID: 359482628}
   - component: {fileID: 359482629}
   - component: {fileID: 359482630}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1120,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7146504793537215575, guid: dbbf5347476c36040b2f9f928bc1938f, type: 3}
+      propertyPath: m_TagString
+      value: Point
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1167,6 +1171,10 @@ PrefabInstance:
     - target: {fileID: 6152016526228444071, guid: 3841a4ba67fe7eb42a2c5fddbaea2d6d, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152016526228444071, guid: 3841a4ba67fe7eb42a2c5fddbaea2d6d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6324947471847618593, guid: 3841a4ba67fe7eb42a2c5fddbaea2d6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1265,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7146504793537215575, guid: dbbf5347476c36040b2f9f928bc1938f, type: 3}
+      propertyPath: m_TagString
+      value: Point
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1312,9 +1324,9 @@ GameObject:
   - component: {fileID: 960617771}
   - component: {fileID: 960617772}
   - component: {fileID: 960617773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1442,9 +1454,9 @@ GameObject:
   - component: {fileID: 1080168784}
   - component: {fileID: 1080168786}
   - component: {fileID: 1080168785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1623,6 +1635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7146504793537215575, guid: dbbf5347476c36040b2f9f928bc1938f, type: 3}
+      propertyPath: m_TagString
+      value: Point
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1639,9 +1655,9 @@ GameObject:
   - component: {fileID: 1502667821}
   - component: {fileID: 1502667822}
   - component: {fileID: 1502667823}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1809,9 +1825,9 @@ GameObject:
   - component: {fileID: 1629407084}
   - component: {fileID: 1629407086}
   - component: {fileID: 1629407085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1939,9 +1955,9 @@ GameObject:
   - component: {fileID: 1837910140}
   - component: {fileID: 1837910139}
   - component: {fileID: 1837910138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2069,9 +2085,9 @@ GameObject:
   - component: {fileID: 1850190178}
   - component: {fileID: 1850190179}
   - component: {fileID: 1850190180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2210,13 +2226,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4080417734666130321, guid: b0dacf48eed36274da549687c7d81be2, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681682636686806897, guid: b0dacf48eed36274da549687c7d81be2, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6681682636686806897, guid: b0dacf48eed36274da549687c7d81be2, type: 3}
       propertyPath: velocity
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6681682636686806897, guid: b0dacf48eed36274da549687c7d81be2, type: 3}
       propertyPath: forcePower
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681682636686806897, guid: b0dacf48eed36274da549687c7d81be2, type: 3}
+      propertyPath: rotateSpeed
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8936556648039256539, guid: b0dacf48eed36274da549687c7d81be2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2323,6 +2351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6152016526228444071, guid: 3841a4ba67fe7eb42a2c5fddbaea2d6d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6324947471847618593, guid: 3841a4ba67fe7eb42a2c5fddbaea2d6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.25
@@ -2419,6 +2451,10 @@ PrefabInstance:
     - target: {fileID: 7146504793537215575, guid: dbbf5347476c36040b2f9f928bc1938f, type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146504793537215575, guid: dbbf5347476c36040b2f9f928bc1938f, type: 3}
+      propertyPath: m_TagString
+      value: Point
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
