@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
         
         Dash();
         
-        print(_percentageComplete + " ");
     }
 
     private void Move()
@@ -78,10 +77,10 @@ public class PlayerMovement : MonoBehaviour
         
         _canDash = false;
         _elapsedTime += Time.deltaTime;
-
-        StartCoroutine(DashCooldown());
-
         _percentageComplete = _elapsedTime / dashTime;
+        
+        StartCoroutine(DashCooldown());
+        
         Vector2 dashDirection = new Vector2(_horizontalInput, _verticalInput);
         transform.position = Vector3.Lerp(transform.position, transform.position + (Vector3)(dashDirection * forcePower), _percentageComplete);
         _direction = dashDirection;
@@ -90,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator DashCooldown()
     {
         yield return new WaitForSeconds(dashCooldown);
+        
         _percentageComplete = 0;
         _elapsedTime = 0;
         _canDash = true;

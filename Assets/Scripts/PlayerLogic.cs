@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class PlayerLogic : MonoBehaviour
 {
-
     public Rigidbody2D rb;
+    public Transform GroundCheck;
+    public LayerMask Ground;
+    
     public Vector2 MoveVector;
+    
     public float speed = 2f;
     public float jumpForce = 7f;
-    public bool isGrounded;
-    public Transform GroundCheck;
+    private float jumpTime = 0;
     public float checkRadius = 0.5f;
-    public LayerMask Ground;
+    
+    public bool isGrounded;
     private bool _jumpControl;
+    
     private int jumpIteration = 0;
     public int jumpValueIteration = 60;
-    private float jumpTime = 0;
-  
-
-
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckingGround();
@@ -50,9 +48,10 @@ public class PlayerLogic : MonoBehaviour
     }
 
     public bool faceRight = true;
+
     void Reflect()
     {
-        if((MoveVector.x > 0 && !faceRight) || (MoveVector.x < 0 && faceRight))
+        if ((MoveVector.x > 0 && !faceRight) || (MoveVector.x < 0 && faceRight))
         {
             transform.localScale *= new Vector2(-1, 1);
             faceRight = !faceRight;
@@ -69,11 +68,19 @@ public class PlayerLogic : MonoBehaviour
             Physics2D.IgnoreLayerCollision(7, 8, true);
             Invoke("IgnoreLayerOFF", 0.5f);
         }
+
         if (Input.GetKey(KeyCode.W))
         {
-            if (isGrounded) { jumpControl = true; }
+            if (isGrounded)
+            {
+                jumpControl = true;
+            }
         }
-        else { jumpControl = false; }
+        else
+        {
+            jumpControl = false;
+        }
+
         if (jumpControl)
         {
             if ((jumpTime += Time.fixedDeltaTime) < jumpControlTime)
@@ -81,8 +88,12 @@ public class PlayerLogic : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce / (jumpTime * 10));
             }
         }
-        else { jumpTime = 0; }
+        else
+        {
+            jumpTime = 0;
+        }
     }
+
     void CheckingGround()
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheck.position, checkRadius, Ground);
@@ -93,21 +104,22 @@ public class PlayerLogic : MonoBehaviour
 
     void Lunge()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && !lockLunge)
+        if (Input.GetKey(KeyCode.LeftControl) && !lockLunge)
         {
             lockLunge = true;
             Invoke("LungeLock", LungeLockeTime);
             rb.velocity = new Vector2(0, 0);
 
-            if (!faceRight) { rb.AddForce(Vector2.left * lungeImpulce); }
+            if (!faceRight)
+            {
+                rb.AddForce(Vector2.left * lungeImpulce);
+            }
             else
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.right * lungeImpulce);
-
             }
         }
-
     }
 
     private bool lockLunge = false;
