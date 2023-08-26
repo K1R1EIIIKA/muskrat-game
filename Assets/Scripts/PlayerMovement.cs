@@ -37,8 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (Level.IsDead || Level.IsPaused) return;
+        
         Move();
-        print(_canDash);
 
         if (Input.GetKeyDown(KeyCode.Space) && _canDash)
             _isDash = true;
@@ -70,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash()
     {
-        if (_percentageComplete > 1.0f) 
+        if (_percentageComplete > 1.0f || (_verticalInput == 0 && _horizontalInput == 0)) 
             _isDash = false;
         
         if (!_isDash || _percentageComplete > 1.0f || (_horizontalInput == 0 && _verticalInput == 0)) return;

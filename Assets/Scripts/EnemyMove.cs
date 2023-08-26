@@ -22,12 +22,6 @@ public class EnemyMove : MonoBehaviour
         randomSpot = Random.Range(0, moveSpot.Length);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            Player.Health--;
-    }
-
     void Update()
     {
         lenght = moveSpot.Length;

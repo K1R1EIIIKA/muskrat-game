@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28210499-cdf3-451c-8f35-00be2ff4f320" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PointsLogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PointsLogic.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.muskrat-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.muskrat-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Point.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Point.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +103,7 @@
       <workItem from="1692890929473" duration="10344000" />
       <workItem from="1692985020458" duration="10044000" />
       <workItem from="1693038501672" duration="13838000" />
-      <workItem from="1693077827786" duration="2899000" />
+      <workItem from="1693077827786" duration="5547000" />
     </task>
     <servers />
   </component>
