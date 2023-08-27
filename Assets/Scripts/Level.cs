@@ -55,6 +55,7 @@ public class Level : MonoBehaviour
     {
         Player.Health = 5;
         Player.Points = 0;
+        PlayerMovement.CanMove = true;
         Time.timeScale = 1;
         IsPaused = false;
         IsDead = false;

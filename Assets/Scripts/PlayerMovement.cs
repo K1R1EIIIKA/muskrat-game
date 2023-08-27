@@ -28,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
     private float _percentageComplete;
 
     private bool _canDash = true;
-    private bool _isDash;
+    public static bool IsDash;
+
+    public static bool CanMove = true;
+    public static float WaterSpeed;
 
     private void Awake()
     {
@@ -37,20 +40,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Level.IsDead || Level.IsPaused) return;
+        WaterSpeed = speed / 2f;
         
-        Move();
+        if (Level.IsDead || Level.IsPaused) return;
 
+        Move(!Player.HasNotGround ? speed : WaterSpeed);
+
+        if (!CanMove || Player.HasNotGround) return;
+        
         if (Input.GetKeyDown(KeyCode.Space) && _canDash)
-            _isDash = true;
+            IsDash = true;
         
         Dash();
     }
 
-    private void Move()
+    private void Move(float moveSpeed)
     {
         _horizontalInput = Input.GetAxisRaw("Horizontal");
-        _verticalInput = Input.GetAxisRaw("Vertical");
+        if (CanMove)
+            _verticalInput = Input.GetAxisRaw("Vertical");
 
         if (_horizontalInput != 0 && _verticalInput == 0)
             _axisVertical = Mathf.MoveTowards(_axisVertical, 0, rotateSpeed);
@@ -64,17 +72,17 @@ public class PlayerMovement : MonoBehaviour
             _inputDirection = new Vector2(_axisHorizontal, _axisVertical);
 
         _direction = Vector2.Lerp(_direction, _inputDirection, rotateSpeed);
-
-        transform.position += (Vector3)_direction.normalized * (speed * Time.deltaTime);
+        
+        transform.position += (Vector3)_direction.normalized * (moveSpeed * Time.deltaTime);
         speed += velocity / 1000f;
     }
 
     private void Dash()
     {
         if (_percentageComplete > 1.0f || (_verticalInput == 0 && _horizontalInput == 0)) 
-            _isDash = false;
+            IsDash = false;
         
-        if (!_isDash || _percentageComplete > 1.0f || (_horizontalInput == 0 && _verticalInput == 0)) return;
+        if (!IsDash || _percentageComplete > 1.0f || (_horizontalInput == 0 && _verticalInput == 0)) return;
         
         _canDash = false;
         _elapsedTime += Time.deltaTime;
