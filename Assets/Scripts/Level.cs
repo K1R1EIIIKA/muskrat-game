@@ -1,15 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Level : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject deathScreen;
+    
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private TextMeshProUGUI pointsText;
+
+    [SerializeField] private TextMeshProUGUI healthPoints;
+    [SerializeField] private TextMeshProUGUI pointsPoints;
 
     public static bool IsDead;
     public static bool IsPaused;
+    public static bool IsWin;
 
     private void Awake()
     {
@@ -18,8 +26,14 @@ public class Level : MonoBehaviour
 
     void Update()
     {
+        healthPoints.text = "Health: " + Player.Health;
+        pointsPoints.text = "Points: " + Player.Points;
+        
         if (Player.Health <= 0)
             Death();
+        
+        if (IsWin)
+            Win();
 
         if (Input.GetKeyDown(KeyCode.Escape) && !IsDead)
         {
@@ -28,6 +42,15 @@ public class Level : MonoBehaviour
             else
                 Unpause();
         }
+    }
+
+    private void Win()
+    {
+        winScreen.SetActive(true);
+        pointsText.text = "You collected " + Player.Points + " points!!";
+        
+        Time.timeScale = 0;
+        IsPaused = true;
     }
 
     private void Death()
@@ -44,7 +67,7 @@ public class Level : MonoBehaviour
         IsPaused = true;
     }
 
-    private void Unpause()
+    public void Unpause()
     {
         pauseScreen.SetActive(false);
         Time.timeScale = 1;
@@ -59,5 +82,6 @@ public class Level : MonoBehaviour
         Time.timeScale = 1;
         IsPaused = false;
         IsDead = false;
+        IsWin = false;
     }
 }

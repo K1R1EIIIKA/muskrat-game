@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
             Health--;
+
+        if (other.gameObject.CompareTag("Destination"))
+            Level.IsWin = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

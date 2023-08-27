@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Wall
   - Water
+  - Destination
   layers:
   - Default
   - TransparentFX
